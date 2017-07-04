@@ -31,6 +31,7 @@ class SearchBar extends Component {
         <InputSearch term={this.state.term} change={this.onInputChange} />
         <InputPercentage percent={this.state.percent} change={this.onNumberChange} />
         <span className='b-color-search-warning'>Color already on the list</span>
+        <span className='b-color-search-success'>Color added!</span>
       </div>
     )
   }
@@ -61,11 +62,23 @@ class SearchBar extends Component {
     },900)
   }
 
+  showSuccessMessage(success) {
+    success.style.visibility = 'visible';
+    this.hideSuccessMessage(success);
+  }
+
+  hideSuccessMessage(success) {
+    setTimeout(()=>{
+      success.style.visibility = 'hidden';
+    },900)
+  }
+
   postColor(e, color){
     e.persist();
 
     // selector of the warning message for a particular color swatch
-    let warning = e.target.parentNode.lastChild;
+    let warning = e.target.parentNode.children[3];
+    let success = e.target.parentNode.children[4];
 
     db.table('color').toArray().then((colors) => {
       let currentColorsArray = [];
@@ -81,6 +94,8 @@ class SearchBar extends Component {
 
         this.props.addColor({color});
         this.props.loadColors();
+
+        this.showSuccessMessage(success);
       }
 
       else {

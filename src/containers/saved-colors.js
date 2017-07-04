@@ -59,6 +59,23 @@ class SavedColors extends Component {
       return (<div>Loading...</div>)
     }
 
+    if(!colorsArr.length) {
+      return (
+        <nav>
+            <SearchNav />
+            <h3 className='b-saved-colors-list__header'>Your Colors:</h3>
+            <div className='b-saved-colors-list-scroller_up' onMouseMove={() => { this.goUp() }}></div>
+            <ul className='b-saved-colors-list' onWheel={(e) => { this.wheel(e) }}>
+              <li className='b-empty-swatch__small--wrapper'>
+                <span className='b-empty-swatch__small'></span>
+                <span className='b-empty-swatch__small--label'>Add first color</span>
+              </li>
+            </ul>
+            <div className='b-saved-colors-list-scroller_down' onMouseMove={() => { this.goDown() }}></div>
+        </nav>
+      )
+    }
+
     return (
       <nav>
           <SearchNav />
@@ -104,7 +121,7 @@ class SavedColors extends Component {
     e.preventDefault();
 
     let list = document.getElementsByClassName('b-saved-colors-list');
-    
+
     if (e.deltaY <= 0 && list[0].scrollTop !== 0) {
       this.goUp();
     }

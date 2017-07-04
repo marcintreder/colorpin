@@ -1,0 +1,48 @@
+.b-color-added-success {
+  top: 40px;
+  right: 13px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  visibility: hidden;
+
+  height: 30px;
+  width: 114px;
+
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 2px;
+
+  font-size: 9px;
+  font-weight: 300;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+}
+
+.b-color-search-success {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  visibility: hidden;
+
+  top: 25px;
+  left: -530px;
+
+  height: 30px;
+  width: 160px;
+
+  background: $blue-base;
+
+  border-radius: 2px;
+
+  font-size: 12px;
+  color: white;
+  font-weight: 300;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+
+}

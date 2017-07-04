@@ -38,12 +38,17 @@ class ColorSwatch extends Component {
               data-clipboard-text={hex}
               onClick = {e => this.handleClick(e)}
               >
-            <span className= { 'b-color-added-warning' } style={ luminosity >= 79 ? { color: '#777777', borderColor: '#777777' } : { color: '#ffffff', borderColor: '#ffffff' } }>
+            <span className= { 'b-color-added-warning' } style= {
+                luminosity >= 79 ? { color: '#777777', borderColor: '#777777' } : { color: '#ffffff', borderColor: '#ffffff' }}>
                 Color already on the list
+            </span>
+            <span className= { 'b-color-added-success'} style= {
+                luminosity > 79 ? { color: '#006980', borderColor: '#006980' } : { color: '#ccf6ff', borderColor: '#ccf6ff' }}>
+                Color added!
             </span>
             { this.showPercentage() }
         </div>
-        <AddButton size='small' addColor={(e) => { this.postColor(e, hex) }}/>
+        <AddButton size='small' addColor={(e) => { this.postColor(e, hex) }} showSuccess= {(e) => { this.showSuccessMessage(e) }}/>
         <ul className='list-colors-codes'>
           <li className='b-copy-code_clipboard b-copy-code_hex' onClick = {e => this.handleClick(e)} data-clipboard-text={hex}>{hex}</li>
           <li className='b-copy-code_clipboard' onClick = {e => this.handleClick(e)} data-clipboard-text={rgb}>{rgb}</li>
@@ -54,7 +59,7 @@ class ColorSwatch extends Component {
   }
 
   showWarning(warning) {
-    warning.style.visibility = 'visible';
+    warning.style.visibility = 'visible'; console.log(warning)
 
     this.hideWarning(warning);
   }
@@ -62,6 +67,17 @@ class ColorSwatch extends Component {
   hideWarning(warning) {
     setTimeout(()=>{
       warning.style.visibility = 'hidden';
+    },900)
+  }
+
+  showSuccessMessage(success) {
+    success.style.visibility = 'visible';
+    this.hideSuccessMessage(success);
+  }
+
+  hideSuccessMessage(success) {
+    setTimeout(()=>{
+      success.style.visibility = 'hidden';
     },900)
   }
 
@@ -114,6 +130,7 @@ class ColorSwatch extends Component {
 
     // selector of the warning message for a particular color swatch
     let warning = e.target.parentNode.children[0].children[0];
+    let success = e.target.parentNode.children[0].children[1];
 
     db.table('color').toArray().then((colors) => {
       let currentColorsArray = [];
@@ -127,8 +144,10 @@ class ColorSwatch extends Component {
 
         currentColorsArray.push(color);
 
-        this.props.addColor({color});
+        this.props.addColor({ color });
         this.props.loadColors();
+
+        this.showSuccessMessage(success);
       }
 
       else {
