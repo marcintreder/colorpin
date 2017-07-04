@@ -1,0 +1,175 @@
+.b-header-accessability {
+  position: fixed;
+  z-index: 2010;
+
+  top: 90px;
+
+  padding: 20px 0 40px 0;
+
+  width: 100%;
+
+  background-color: #ffffff;
+
+  > span {
+    display: block;
+
+
+    width: 840px;
+
+    margin-top: 22px;
+
+    font-size: $font-size-base;
+    line-height: 150%;
+
+  }
+}
+
+table {
+  position: relative;
+  top: 182px;
+
+  width: 840px;
+
+  margin-left: 15px;
+
+  font-family: 'Proxima Nova';
+  color: $text-color-base;
+  font-weight: 100;
+
+  table-layout: fixed;
+  border-collapse: collapse;
+
+  thead {
+    display: table;
+    position: fixed;
+    z-index: 2001;
+    top: 244px;
+
+    width: 840px;
+
+    margin: auto;
+
+    background: #fff;
+
+  }
+
+  th {
+    width: 100px;
+    height: 20px;
+
+    margin: auto;
+    padding-top: 40px;
+  }
+
+  td {
+    width: 60px;
+    height: 60px;
+
+    margin: auto;
+
+    text-align: center;
+    vertical-align: top;
+    padding: 10px 0 10px 0;
+  }
+
+}
+
+.b-swatch__accessability--wcag--wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.b-swatch__accessability {
+  display: block;
+
+  width: 60px;
+  height: 60px;
+
+  margin: auto;
+
+  border-radius: 3px;
+}
+
+.b-swatch__accessability--back-for-color{
+
+  figcaption {
+    margin-top: 10px;
+
+    font-weight: 100;
+    font-size: $font-size-base;
+  }
+}
+
+.b-swatch__accessability--back-for-color--link {
+  text-decoration: none;
+  color: $text-color-base;
+
+  &:hover {
+    color: $blue-base;
+    text-decoration: underline;
+  }
+}
+
+.b-swatch__accessability--contrast {
+  width: 60px;
+  height: 60px;
+
+  margin: auto;
+
+  color: $gray-base;
+  font-weight: 100;
+  font-size: 30px;
+  line-height: 70px;
+
+  text-align: center;
+
+}
+
+.b-swatch__accessability--wcag {
+  margin: auto;
+
+  figcaption {
+    margin-top: 10px;
+
+    font-size: $font-size-small;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+  }
+}
+
+.b-swatch__accessability--wcag--test {
+  display: block;
+  position: absolute;
+
+  margin-top: 20px;
+}
+
+.b-colors-details--warning {
+  position: absolute;
+  z-index: 2015;
+  display: flex;
+  align-items: center;
+
+  top: -70px;
+
+  width: 100vh;
+  height: 90px;
+
+  background-color: $yellow-base;
+
+  border-radius: 3px;
+
+  > td {
+    width: 80%;
+    > span {
+      line-height: 150%;
+      > strong {
+      font-weight: bold;
+    }
+    }
+
+  }
+}

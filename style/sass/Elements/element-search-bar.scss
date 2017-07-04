@@ -1,0 +1,59 @@
+.input {
+  font-family: 'Proxima Nova';
+  font-size: 40px;
+  font-weight: 300;
+  color: #555;
+
+
+  border: 0;
+
+  -webkit-appearance:none;
+  outline: none;
+}
+
+.search {
+  display: block;
+  width: 170px;
+  margin-right: 40px;
+}
+
+.search-wrapper {
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 130px;
+    width: 145px;
+    height: 1px;
+    border-bottom: 1px dashed #555;
+  }
+}
+
+.number {
+  width: 86px;
+}
+
+.number-wrapper {
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 130px;
+    width: 40px;
+    height: 1px;
+    border-bottom: 1px dashed #555;
+  }
+  &:after {
+    content: '%';
+    position: relative;
+    display: block;
+
+    top: -28px;
+    left: 46px;
+
+    width: 40px;
+    height: 1px;
+
+    font-family: 'Proxima Nova';
+  }
+}

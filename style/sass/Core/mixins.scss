@@ -1,0 +1,78 @@
+// Icon Mixin
+
+@mixin icon($icon, $size, $position) {
+  background-image: $icon;
+  background-size: $size $size;
+  background-repeat: no-repeat;
+  background-position: $position;
+}
+
+@mixin icon-advanced($icon, $size-w, $size-h, $position-x, $position-y) {
+  background-image: $icon;
+  background-size: $size-w $size-h;
+  background-repeat: no-repeat;
+  background-position: $position-x $position-y;
+}
+
+// Hovers & interactive patterns
+
+@mixin hover-shadow() {
+  box-shadow: 3px 3px 30px fade-out($silver-base, .3);
+  transition: box-shadow .1s ease-in-out;
+}
+
+@mixin element-clicked($color) {
+  background-color: darken($color, 2%);
+
+  transition: background-color .1s ease-in;
+}
+
+// Properties
+
+@mixin initial-shadow($color, $opacity) {
+  box-shadow: 3px 3px 10px fade-out($color, $opacity);
+}
+
+// Typography Mixins
+
+@mixin text-base($color, $weight) {
+  font-size: $font-size-base;
+  line-height: $font-size-base * 1.5;
+  color: $color;
+  font-weight: $weight;
+}
+
+@mixin headline-1($color, $weight) {
+  font-size: $font-size-headline-1;
+  line-height: $font-size-headline-1 * 1.2;
+  color: $color;
+  font-weight: $weight;
+}
+
+@mixin headline-2($color, $weight) {
+  font-size: $font-size-headline-2;
+  line-height: $font-size-headline-2 * 1.2;
+  color: $color;
+  font-weight: $weight;
+}
+
+@mixin headline-3($color, $weight) {
+  font-size: $font-size-headline-3;
+  line-height: $font-size-headline-3 * 1.2;
+  color: $color;
+  font-weight: $weight;
+}
+
+@mixin headline-4($color, $weight) {
+  font-size: $font-size-headline-4;
+  line-height: $font-size-headline-4 * 1.2;
+  color: $color;
+  font-weight: $weight;
+}
+
+@mixin headline-5($color, $weight) {
+  font-size: $font-size-headline-5;
+  line-height: $font-size-headline-5 * 1.5;
+  color: $color;
+  font-weight: $weight;
+}

@@ -1,0 +1,45 @@
+.b-add-button {
+  display: block;
+
+  border-radius: 3px;
+
+  &:hover {
+    @include hover-shadow();
+  }
+  &:active {
+    @include element-clicked($silver-base);
+  }
+}
+
+.b-add-button_big {
+  width: 50px;
+  height: 50px;
+
+  margin: 12px 10px 0 0;
+
+  background-color: $silver-base;
+
+  @include icon($add-icon, 24px, center);
+}
+
+.b-add-button_small {
+  position: absolute;
+
+  top: 102px;
+  left: 110px;
+
+  width: 24px;
+  height: 24px;
+
+  background-color: white;
+  opacity: .5;
+
+  border-radius: 3;
+
+  @include icon($add-icon, 10px, center);
+
+  &:hover {
+    opacity: 1;
+    border: 1px solid $silver-lighten-4;
+  }
+}

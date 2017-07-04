@@ -1,0 +1,33 @@
+.b-percentage {
+  border-bottom: 1px solid $silver-base;
+
+  &:after {
+    content: '%';
+    position: relative;
+    display: block;
+
+    top: -54px;
+    left: 96px;
+
+    width: 40px;
+    height: 1px;
+
+    @include headline-3($text-color-search, 100);
+  }
+
+}
+
+.b-percentage__input {
+  width: 150px;
+
+  padding: 0 5px 0 5px;
+
+  border: 0;
+  outline: none;
+
+  @include headline-1($text-color-search, 100);
+  text-align: center;
+
+  -webkit-appearance:none;
+
+}

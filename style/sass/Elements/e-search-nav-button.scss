@@ -1,0 +1,35 @@
+.b-search-nav-button {
+  display: block;
+  background-color: $silver-darken-5;
+
+  max-height: 60px;
+
+  @include icon($search-icon, 18px, center);
+}
+
+.b-search-nav-button-wrapper {
+  max-height: 50px;
+  margin-bottom: 10px;
+}
+
+.b-search-nav-button_active {
+  &:after {
+    content: '';
+    position: relative;
+
+    display: inline-block;
+
+    top: -36px;
+    left: -35px;
+
+    width: 10px;
+    height: 7px;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: $gray-base;
+
+    border-radius: 0 10px 10px 0;
+  }
+}

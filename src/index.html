@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ColorPin</title>
+    <script src="https://use.typekit.net/pxk4ehv.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
+  </head>
+  <body>
+   <div id="root"></div>
+  <script>
+   var clipboard = new Clipboard('.b-copy-code_clipboard');
+   clipboard.on('success', function(e) {
+     console.log(e.text);
+   });
+   clipboard.on('error', function(e) {
+   });
+ </script>
+  </body>

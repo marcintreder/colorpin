@@ -1,0 +1,72 @@
+nav {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 110px;
+  min-width: 110px;
+  height: 100vh;
+
+  padding: 20px 0 0 0;
+
+  background-color: $silver-lighten-4;
+
+  border: 1px solid $silver-base;
+}
+
+.b-saved-colors-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100vh;
+  overflow: auto;
+
+  width: 100%;
+
+  padding-bottom: 20px;
+  > li {
+    margin-bottom: 15px;
+    height: 80px;
+  }
+}
+
+.b-saved-colors-list__header {
+  display: block;
+
+  width: 110px;
+  height: 20px;
+
+  margin-bottom: 20px;
+  margin-top: 10px;
+
+  background-color: $silver-base;
+
+  font-family: 'Proxima Nova';
+  font-size: 8px;
+  color: $gray-lighten-20;
+  line-height: 22px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.b-saved-colors-list-scroller_down {
+  display: inline-block;
+  position: fixed;
+
+  bottom: 0;
+  height: 20px;
+  width: 110px;
+}
+
+.b-saved-colors-list-scroller_up {
+  display: inline-block;
+  position: fixed;
+
+  top: 100px;
+  height: 20px;
+  width: 110px;
+}

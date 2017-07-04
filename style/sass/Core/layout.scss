@@ -1,0 +1,19 @@
+html, body, main {
+  height: 100%;
+
+  font-family: 'proxima-nova';
+}
+
+.wrapper {
+  display: flex;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  margin-left: 100px;
+  padding-left: 20px;
+}

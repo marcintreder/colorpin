@@ -1,0 +1,150 @@
+
+.b-color-swatch {
+  display: block;
+  position: relative;
+
+  height: 170px;
+  width: 140px;
+
+  margin: 0 0 30px 30px;
+
+  border-radius: 3px;
+  @include initial-shadow($silver-base, .7);
+
+  color: $text-color-base;
+
+  list-style: none;
+
+  &:hover {
+    @include hover-shadow();
+  }
+}
+
+.b-color-swatch__color-area {
+  display: flex;
+  align-self: center;
+
+  height: 100px;
+  width: 140px;
+
+  //background-color is set by javascript
+  border-bottom: 1px solid; // border-color is set by javascript
+
+  border-radius: 2px;
+
+  cursor: default;
+
+}
+
+.b-color-percentage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  height: 24px;
+  width: 24px;
+
+  margin: 6px;
+
+  background-color: #fff;
+
+  border-radius: 20px;
+
+  color: #777;
+  font-size: 10px;
+}
+
+.list-colors-codes {
+
+  margin: 0;
+  padding: 4px 0 4px 8px;
+
+  font-weight: 300;
+  font-size: 12px;
+
+  list-style-type: none;
+
+  > li {
+    width: 95%;
+    padding: 4px;
+
+    text-align: left;
+  }
+  >:first-of-type{
+    margin-top: 2px;
+    font-weight: 600;
+  }
+}
+
+.b-copy-code_clipboard {
+  // class used by clipboard.js
+  cursor: default;
+}
+
+.b-copied-white {
+  &:after {
+    display: block;
+    position: absolute;
+    z-index: 1000;
+    opacity: 1;
+    top: 45px;
+    left: 34px;
+
+    width: 70px;
+    height: 20px;
+
+    content: 'Hex Copied';
+
+    border-radius: 2px;
+    border: 1px solid white;
+
+    padding: 5px 2px 1px 2px;
+
+    font-size: 9px;
+    color: white;
+    font-weight: 300;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+  }
+  }
+
+  .b-copied-dark {
+    &:after {
+      display: block;
+      position: absolute;
+      z-index: 1000;
+      opacity: 1;
+      top: 45px;
+      left: 34px;
+
+      width: 70px;
+      height: 20px;
+
+      content: 'Hex Copied';
+
+      border-radius: 2px;
+      border: 1px solid $gray-lighten-20;
+
+      padding: 5px 2px 1px 2px;
+
+      font-size: 9px;
+      color: $gray-lighten-20;
+      font-weight: 300;
+      text-align: center;
+      text-rendering: optimizeLegibility;
+
+    }
+    }
+
+  .b-copied-text {
+    color: #fff;
+    background-color: $blue-base;
+    @include icon-advanced($copy-icon, 13px, 14px, center, right 4px);
+
+    border-radius: 2px;
+  }
+
+  .b-copy-code_hex {
+    width: 100px !important;
+  }
