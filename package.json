@@ -9,7 +9,6 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf build",
-    "build": "NODE_ENV=production npm run clean && webpack",
     "serve": "NODE_ENV=development webpack-dev-server --open --no-info --history-api-fallback",
     "start": "NODE_ENV=production node server.js",
     "postinstall": "webpack -p"
