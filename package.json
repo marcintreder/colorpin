@@ -6,7 +6,7 @@
     "node": "7.2.0",
     "npm": "3.10.9"
   },
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "clean": "rimraf build",
     "build": "NODE_ENV=production npm run clean && webpack",
