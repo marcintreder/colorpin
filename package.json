@@ -30,10 +30,7 @@
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
     "redux-promise": "^0.5.3",
-    "webpack": "^2.3.2"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.24.0",
+    "webpack": "^2.3.2",
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
     "babel-polyfill": "^6.23.0",
@@ -53,7 +50,10 @@
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
-    "tinycolor2": "^1.4.1",
+    "tinycolor2": "^1.4.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
     "webpack-dev-server": "^2.2.0-rc.0"
   }
 }
