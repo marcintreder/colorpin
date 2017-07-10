@@ -10,7 +10,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: '/build'
+    publicPath: '/' // build
   },
   resolve: {
     modules: [__dirname, 'node_modules'],
