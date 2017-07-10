@@ -27,7 +27,7 @@ class SearchBar extends Component {
 
     return (
       <div className='color-search'>
-        <AddButton addColor={(e) => this.postColor(e, color) } size='big'/>
+        <AddButton addColor={(e) => this.postColor(e, color) } size='test'/>
         <InputSearch term={this.state.term} change={this.onInputChange} />
         <InputPercentage percent={this.state.percent} change={this.onNumberChange} />
         <span className='b-color-search-warning'>Color already on the list</span>

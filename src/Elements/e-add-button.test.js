@@ -21,12 +21,12 @@ test('AddButton with size big should return class big-0-2 from JSS', () => {
 
 test('AddButton with size small should return class small-0-1 from JSS', () => {
   const button = mount(<AddButton size='small' />);
-  
+
   expect(button.hasClass('small-0-1')).toBeTruthy();
 })
 
-test('AddButton with size other than small or big should return class small-0-1 from JSS', () => {
+test('AddButton with size other than small or big should return error', () => {
   const button = mount(<AddButton size='test' />);
 
-  expect(button.hasClass('small-0-1')).toBeTruthy();
+  expect(button.hasClass( 'big-0-2' || 'small-0-1' )).toBeFalsy();
 })

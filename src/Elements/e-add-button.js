@@ -11,9 +11,15 @@ jss.setup(preset())
 class AddButton extends Component {
 // This button expects string indicating the size - big or small.
   render() {
-    const type = this.props.size === 'big'  ? this.props.classes.big : this.props.classes.small;
 
-    return <span className= { type } onClick={ this.props.addColor }/>
+    let type = () => {
+      if (this.props.size === 'big') { return this.props.classes.big }
+      else if (this.props.size === 'small') { return this.props.classes.small }
+      // AddButton cannot be rendered with any other size than big or small
+      else { console.log('error - wrong type of AddButton set by props size') }
+    }
+
+    return <span className= { type() } onClick={ this.props.addColor }/>
   }
 }
 
