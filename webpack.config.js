@@ -10,7 +10,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: '/build' // build
+    publicPath: '/' // build
   },
   resolve: {
     modules: [__dirname, 'node_modules'],
@@ -22,8 +22,8 @@ const config = {
   module: {
     rules: [
       {
-        use: 'babel-loader',
-        test: /\.js$/,
+        use: ['babel-loader', 'eslint-loader'],
+        test: /\.jsx?$/,
         exclude: /node_modules/
       },
       {

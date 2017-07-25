@@ -6,7 +6,7 @@ import { getPercent } from '../actions/index';
 import { addColor } from '../actions/index';
 import { loadColors } from '../actions/index';
 
-import AddButton from '../Elements/e-add-button';
+import AddButton from '../Elements/addButton/e-add-button';
 import InputSearch from '../Elements/e-input-search';
 import InputPercentage from '../Elements/e-input-percentage';
 
@@ -27,7 +27,7 @@ class SearchBar extends Component {
 
     return (
       <div className='color-search'>
-        <AddButton addColor={(e) => this.postColor(e, color) } size='big'/>
+        <AddButton addColor={(e) => this.postColor(e, color) } size= 'big'/>
         <InputSearch term={this.state.term} change={this.onInputChange} />
         <InputPercentage percent={this.state.percent} change={this.onNumberChange} />
         <span className='b-color-search-warning'>Color already on the list</span>
