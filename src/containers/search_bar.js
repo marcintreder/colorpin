@@ -6,7 +6,7 @@ import { getPercent } from '../actions/index';
 import { addColor } from '../actions/index';
 import { loadColors } from '../actions/index';
 
-import AddButton from '../Elements/addButton/e-add-button';
+import AddButton from '../Elements/AddButton/e-add-button';
 import InputSearch from '../Elements/e-input-search';
 import InputPercentage from '../Elements/e-input-percentage';
 
