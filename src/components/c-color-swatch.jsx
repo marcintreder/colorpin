@@ -107,18 +107,15 @@ class ColorSwatch extends Component {
           hex={this.props.hex}
           luminosity={luminosity}
           copyColor={(e) => { this.handleClick(e); }}
-          percentage={this.props.percentage}
-        />
+          percentage={this.props.percentage} />
         <AddButton
           size="small"
           addColor={(e) => { this.postColor(e, hex); }}
-          showSuccess={(e) => { this.showSuccessMessage(e); }}
-        />
+          showSuccess={(e) => { this.showSuccessMessage(e); }} />
         <ColorSwatchColorsList
           hex={this.props.hex}
           rgb={this.props.rgb}
-          hsl={this.props.hsl}
-        />
+          hsl={this.props.hsl} />
       </li>
     );
   }

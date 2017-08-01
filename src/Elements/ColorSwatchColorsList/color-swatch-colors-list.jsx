@@ -15,7 +15,7 @@ class ColorSwatchColorsList extends Component {
       this.setState({ active: 'none' });
     }, 700);
   }
-  // Class 'b-copy-code_clipboard' is used by clipboard.js
+  // Important: class 'b-copy-code_clipboard' is used by clipboard.js
   render() {
     return (
       <ul className="list-colors-codes">
@@ -26,8 +26,8 @@ class ColorSwatchColorsList extends Component {
             onClick={() => this.handleClick('hex')}
             role="button"
             tabIndex={0}
-            data-clipboard-text={this.props.hex}
-          >{this.props.hex}
+            data-clipboard-text={this.props.hex}>
+            {this.props.hex}
           </CopyLinkHex>
         </li>
         <li>
@@ -37,8 +37,8 @@ class ColorSwatchColorsList extends Component {
             onClick={() => this.handleClick('rgb')}
             role="button"
             tabIndex={0}
-            data-clipboard-text={this.props.rgb}
-          >{this.props.rgb}
+            data-clipboard-text={this.props.rgb}>
+            {this.props.rgb}
           </CopyLinkRgb>
         </li>
         <li>
@@ -48,8 +48,8 @@ class ColorSwatchColorsList extends Component {
             onClick={() => this.handleClick('hsl')}
             role="button"
             tabIndex={0}
-            data-clipboard-text={this.props.hsl}
-          >{this.props.hsl}
+            data-clipboard-text={this.props.hsl}>
+            {this.props.hsl}
           </CopyLinkHsl>
         </li>
       </ul>

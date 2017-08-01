@@ -2,7 +2,7 @@ import glamorous from 'glamorous';
 
 import { copyIcon } from '../../Styles_JS/icons';
 import { iconsMixin } from '../../Styles_JS/mixins';
-import { messageBackground, messageTextColor, messageIconSize } from '../../Styles_JS/colors';
+import { messageBackground, messageTextColor, messageIconSize } from '../../Styles_JS/tokens';
 
 export const CopyLinkCommon = glamorous.a({
   display: 'block',

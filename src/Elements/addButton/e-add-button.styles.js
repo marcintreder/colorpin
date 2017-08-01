@@ -2,7 +2,7 @@ import glamorous from 'glamorous';
 
 import { addIcon } from '../../Styles_JS/icons';
 import { iconsMixin, hoverShadowMixin } from '../../Styles_JS/mixins';
-import { buttonBackground, buttonBorderBackground } from '../../Styles_JS/colors';
+import { buttonBackground, buttonBorderBackground } from '../../Styles_JS/tokens';
 
 
 export const AddButtonCommon = glamorous.button({

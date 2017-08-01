@@ -1,27 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ColorSwatchBoxColor from './color-swatch-box.styles';
 
 const ColorSwatchBox = (props) => {
   return (
-    <div
-      className="b-color-swatch__color-area b-copy-code_clipboard"
-      style={
-        props.hex !== '#ffffff' ?
-          { backgroundColor: props.hex, borderColor: props.hex } :
-          { backgroundColor: props.hex, borderColor: '#f3f3f3' }}
+    <ColorSwatchBoxColor
+      className="b-copy-code_clipboard"
+      background={props.hex}
       data-clipboard-text={props.hex}
       role="button"
       tabIndex={0}
-      onClick={props.copyColor}
-    >
-      {props.children}
-    </div>
+      onClick={props.copyMsg}>
+      {props.children /* percentage warning and success message */ }
+    </ColorSwatchBoxColor>
   );
 };
 
 ColorSwatchBox.propTypes = {
   hex: PropTypes.string.isRequired,
-  copyColor: PropTypes.func.isRequired,
+  copyMsg: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
 };
 
