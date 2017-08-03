@@ -2,14 +2,13 @@ import glamorous from 'glamorous';
 import { messageTextColor, messageBorderColor, messageTextColorDark,
   messageBorderColorDark, messageFontSize, borders } from '../../Styles_JS/tokens';
 
-const ColorSwatchCopiedMsg = glamorous.span(
+const CopiedMessage = glamorous.span(
   (props) => ({
-    visibility: props.visibility === 'hidden' ? 'hidden' : 'visible',
+    display: props.visibility === 'hidden' ? 'none' : 'block',
     color: props.luminosity > 79 ? messageTextColorDark : messageTextColor,
     borderColor: props.luminosity > 79 ? messageBorderColorDark : messageBorderColor,
   }),
   {
-    display: 'block',
     position: 'absolute',
     zIndex: 1000,
     opacity: 1,
@@ -31,4 +30,4 @@ const ColorSwatchCopiedMsg = glamorous.span(
     textRendering: 'optimizeLegibility',
   });
 
-export { ColorSwatchCopiedMsg as default };
+export { CopiedMessage as default };

@@ -22,7 +22,7 @@ export const borders = {
 export const buttonBackground = colors.silverBase;
 export const buttonBorderBackground = colors.silverBase;
 
-// Copy List Messages Tokens Common
+// Copy/Warning/Success Messages Tokens Common
 export const messageTextColor = colors.whiteBase;
 export const messageTextColorDark = colors.mintBase;
 export const messageFontSize = 9;
@@ -32,8 +32,10 @@ export const messageBorderColorDark = colors.mintBase;
 
 export const messageIconSize = 13;
 
-
 // Message Tokens Blue Message Box
 export const messageBackground = colors.blueBase;
 
-// Message Tokens Ghost (copied message, swatch success and warning)
+// Percentage Cicle in Swatch Tokens
+export const percentageBackground = colors.whiteBase;
+export const percentageFontSize = 10;
+export const percentageTextColor = colors.grayBase;

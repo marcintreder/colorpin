@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Percentage from './color-swatch-percentage.styles';
 
 const ColorSwatchPercentage = (props) => {
   return (
-    <span className="b-color-percentage">{props.percentage}</span>
+    <Percentage>{props.percentage}</Percentage>
   );
 };
 

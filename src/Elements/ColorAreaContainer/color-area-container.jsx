@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import ColorSwatchBox from '../ColorSwatchBox/color-swatch-box';
-import ColorSwatchAddWarning from '../ColorSwatchAddWarning/color-swatch-add-warning';
-import ColorSwatchAddSuccess from '../ColorSwatchAddSuccess/color-swatch-add-success';
 import ColorSwatchPercentage from '../ColorSwatchPercentage/color-swatch-percentage';
+import ColorSwatchAddMessage from '../ColorSwatchAddMessage/color-swatch-add-message';
 import ColorSwatchCopiedMessage from '../ColorSwatchCopiedMessage/color-swatch-copied-message';
 
 class ColorAreaContainer extends Component {
@@ -21,6 +20,12 @@ class ColorAreaContainer extends Component {
     }, 900);
   }
 
+  showMessage() {
+    return (<ColorSwatchAddMessage
+      luminosity={this.props.luminosity}
+      msgVisibility={this.props.msgVisibility} />);
+  }
+
   render() {
     return (
       <ColorSwatchBox
@@ -29,8 +34,9 @@ class ColorAreaContainer extends Component {
         <ColorSwatchCopiedMessage
           luminosity={this.props.luminosity}
           visibility={this.state.copiedMsg} />
-        <ColorSwatchAddWarning luminosity={this.props.luminosity} />
-        <ColorSwatchAddSuccess luminosity={this.props.luminosity} />
+        { /* eslint-disable no-nested-ternary */ }
+        { this.props.msgVisibility === 'warning' ? this.showMessage() :
+          this.props.msgVisibility === 'success' ? this.showMessage() : '' }
         <ColorSwatchPercentage percentage={this.props.percentage} />
       </ColorSwatchBox>
     );
@@ -41,11 +47,12 @@ ColorAreaContainer.propTypes = {
   hex: PropTypes.string.isRequired,
   luminosity: PropTypes.number.isRequired,
   percentage: PropTypes.string.isRequired,
+  msgVisibility: PropTypes.oneOf(['hidden', 'warning', 'success']).isRequired,
 };
 
-// Eliminate all html tags that can be replaced with components
-// Change styling to Glamorous and optimize
-// Be careful with functions that use class names (!). Refactor them
-// On Click on box change visibility of warning/success
+// Consider changing all the messages from visibility to display none
+// Refactor functions for copyMsg
+// Add Glamorous to ColorSwatch and ColorAreaContainer containers
+// Add tests to Color Swatch and ColorAreaContainer
 
 export { ColorAreaContainer as default };

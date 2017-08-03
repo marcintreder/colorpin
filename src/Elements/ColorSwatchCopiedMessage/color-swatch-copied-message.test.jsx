@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars, no-undef */
 import React from 'react';
 import { mount } from 'enzyme';
-import sinon from 'sinon';
 
 import ColorSwatchCopiedMessage from './color-swatch-copied-message';
 import ColorSwatchCopiedMsg from './color-swatch-copied-message.styles';

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-// import glamorous from 'glamorous';
 import db from '../db';
 
 
@@ -16,83 +15,51 @@ class ColorSwatch extends Component {
   constructor(props) {
     super(props);
 
-    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      copiedMsg: 'hidden',
+      addMsg: 'hidden', // state of the ColorSwatchAddMessage component
+    };
   }
 
   postColor(e) {
     e.persist();
-    // selector of the warning message for a particular color swatch
-    const warning = e.target.parentNode.children[0].children[0];
-    const success = e.target.parentNode.children[0].children[1];
+
+    /** Post colors saves a gievn color in a database
+    * and loads a new list of colors in the left side
+    * navigation */
 
     db.table('color').toArray().then((colors) => {
       const currentColorsArray = [];
       const color = this.props.hex;
 
+      /* After accessing the database we have to build
+      * an Array of colors for local operations */
       colors.forEach((swatch) => {
         currentColorsArray.push(swatch.colorCode.color);
       });
 
       if (currentColorsArray.indexOf(color) < 0) {
-        this.setState({ color });
+        this.props.addColor({ color }); // adds new color * Redux *
+        this.props.loadColors(); // loads new list of colors * Redux *
 
-        currentColorsArray.push(color);
+        /** When adding a color is successful state of
+        * addMsg changes to success and renders ColorSwatchAddMessage with
+        * a success message on the color swatch */
 
-        this.props.addColor({ color });
-        this.props.loadColors();
-
-        this.showSuccessMessage(success);
+        this.setState({ addMsg: 'success' });
+        setTimeout(() => {
+          this.setState({ addMsg: 'hidden' });
+        }, 900);
       } else {
-        this.showWarning(warning);
+        /** When adding a color is not successful state of
+        * addMsg changes to warning and renders ColorSwatchAddMessage with
+        * a warning message on the color swatch */
+        this.setState({ addMsg: 'warning' });
+        setTimeout(() => {
+          this.setState({ addMsg: 'hidden' });
+        }, 900);
       }
     });
-  }
-
-  showWarning(warning) {
-    warning.style.visibility = 'visible';
-
-    this.hideWarning(warning);
-  }
-
-  hideWarning(warning) {
-    setTimeout(() => {
-      warning.style.visibility = 'hidden';
-    }, 900);
-  }
-
-  showSuccessMessage(success) {
-    success.style.visibility = 'visible';
-    this.hideSuccessMessage(success);
-  }
-
-  hideSuccessMessage(success) {
-    setTimeout(() => {
-      success.style.visibility = 'hidden';
-    }, 900);
-  }
-
-  handleClick(e) {
-    e.persist();
-    e.stopPropagation();
-
-    const hsl = this.props.hsl;
-    const luminosity = parseInt(hsl.substring(hsl.lastIndexOf(' '), hsl.lastIndexOf('%')).trim(), 10);
-
-    if (e.target.className === 'b-color-swatch__color-area b-copy-code_clipboard' && luminosity <= 79) {
-      e.target.classList.add('b-copied-white');
-      setTimeout(() => {
-        if (e.target.classList.contains('b-copied-white')) {
-          e.target.classList.remove('b-copied-white');
-        }
-      }, 600);
-    } else if (e.target.className === 'b-color-swatch__color-area b-copy-code_clipboard') {
-      e.target.classList.add('b-copied-dark');
-      setTimeout(() => {
-        if (e.target.classList.contains('b-copied-dark')) {
-          e.target.classList.remove('b-copied-dark');
-        }
-      }, 600);
-    }
   }
 
   render() {
@@ -106,8 +73,8 @@ class ColorSwatch extends Component {
         <ColorAreaContainer
           hex={this.props.hex}
           luminosity={luminosity}
-          copyColor={(e) => { this.handleClick(e); }}
-          percentage={this.props.percentage} />
+          percentage={this.props.percentage}
+          msgVisibility={this.state.addMsg} />
         <AddButton
           size="small"
           addColor={(e) => { this.postColor(e, hex); }}

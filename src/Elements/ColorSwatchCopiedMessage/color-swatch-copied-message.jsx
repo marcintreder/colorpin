@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ColorSwatchCopiedMsg from './color-swatch-copied-message.styles';
+import CopiedMessage from './color-swatch-copied-message.styles';
 
 const ColorSwatchCopiedMessage = (props) => {
   return (
-    <ColorSwatchCopiedMsg
+    <CopiedMessage
       visibility={props.visibility}
       luminosity={props.luminosity} >
       Hex copied!
-    </ColorSwatchCopiedMsg>
+    </CopiedMessage>
   );
 };
 
