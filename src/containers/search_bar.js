@@ -7,7 +7,6 @@ import { addColor } from '../actions/index';
 import { loadColors } from '../actions/index';
 
 import AddButton from '../components/AddButton/e-add-button';
-import InputPercentage from '../Elements/e-input-percentage';
 import SearchBar from '../components/SearchBar/search-bar';
 
 import db from '../db';
