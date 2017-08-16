@@ -11,7 +11,7 @@ const ColorSwatchBox = (props) => {
       role="button"
       tabIndex={0}
       onClick={props.copyMsg}>
-      {props.children /* percentage warning and success message */ }
+      { props.children /* percentage warning and success message */ }
     </ColorSwatchBoxColor>
   );
 };

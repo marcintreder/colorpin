@@ -6,13 +6,14 @@ import { getPercent } from '../actions/index';
 import { addColor } from '../actions/index';
 import { loadColors } from '../actions/index';
 
-import AddButton from '../Elements/AddButton/e-add-button';
+import AddButton from '../components/AddButton/e-add-button';
 import InputSearch from '../Elements/e-input-search';
 import InputPercentage from '../Elements/e-input-percentage';
+import SearchBar from '../components/SearchBar/search-bar';
 
 import db from '../db';
 
-class SearchBar extends Component {
+class SearchBarContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {term: this.props.currentColor.hex, percent: this.props.currentPercent};
@@ -26,13 +27,12 @@ class SearchBar extends Component {
     let color = this.state.term;
 
     return (
-      <div className='color-search'>
-        <AddButton addColor={(e) => this.postColor(e, color) } size= 'big'/>
-        <InputSearch term={this.state.term} change={this.onInputChange} />
-        <InputPercentage percent={this.state.percent} change={this.onNumberChange} />
-        <span className='b-color-search-warning'>Color already on the list</span>
-        <span className='b-color-search-success'>Color added!</span>
-      </div>
+        <SearchBar
+          addColor={(e) => this.postColor(e, color) }
+          searchChange={this.onInputChange}
+          percentChange={this.onNumberChange}
+          searchTerm={this.state.term}
+          percent={this.state.percent} />
     )
   }
 
@@ -113,4 +113,4 @@ function mapStateToProps({ currentColor, currentPercent, addedColor }) {
   return { currentColor, currentPercent, addedColor, loadColors }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBarContainer);

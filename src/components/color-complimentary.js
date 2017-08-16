@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ColorSwatch from '../components/c-color-swatch';
+import ColorSwatch from '../components/ColorSwatch/color-swatch';
 import tinycolor2 from 'tinycolor2';
 
 export default class ColorComplimentary extends Component {

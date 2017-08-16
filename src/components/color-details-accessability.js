@@ -99,7 +99,7 @@ class ColorDetailsAccessability extends Component {
 
             accessabilityList.push({
               color: activeColor,
-              contrastColor: item.colorCode.color,
+              contrastColor: `#${item.colorCode.color}`,
               aaSmall: aaSmall,
               aaaSmall: aaaSmall,
               aaLarge: aaLarge,
@@ -129,7 +129,6 @@ class ColorDetailsAccessability extends Component {
     return (
       accessabilityList.map((item, index) => {
         const url = item.contrastColor.replace(/\#/g, ''); // deletes # for url
-
 
         return (
                 <tr key={ index }>

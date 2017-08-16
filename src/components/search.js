@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import ColorsList from '../containers/colors-list';
-import SearchBar from '../containers/search_bar';
+import SearchBarContainer from '../containers/search_bar';
 import SavedColors from '../containers/saved-colors';
 
 import { loadColors } from '../actions/index';
@@ -20,7 +20,7 @@ export class Search extends Component {
       <div className='wrapper'>
         <SavedColors colors={ this.props.loadColors }/>
         <section className='content'>
-          <SearchBar />
+          <SearchBarContainer />
           <ColorsList />
         </section>
       </div>

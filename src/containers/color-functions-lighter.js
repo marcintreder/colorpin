@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getPercent } from '../actions/index';
-import ColorSwatch from '../components/c-color-swatch';
+import ColorSwatch from '../components/ColorSwatch/color-swatch';
 import SearchPercentage from './search-percentage';
 
 import tinycolor2 from 'tinycolor2';

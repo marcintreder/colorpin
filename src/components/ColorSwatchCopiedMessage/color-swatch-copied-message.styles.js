@@ -1,10 +1,11 @@
 import glamorous from 'glamorous';
 import { messageTextColor, messageBorderColor, messageTextColorDark,
   messageBorderColorDark, messageFontSize, borders } from '../../Styles_JS/tokens';
-
+/* eslint-disable no-nested-ternary */
 const CopiedMessage = glamorous.span(
   (props) => ({
-    display: props.visibility === 'hidden' ? 'none' : 'block',
+    display: props.visibility === 'hidden' ? 'none' :
+      props.visibility === 'copy' ? 'block' : 'none',
     color: props.luminosity > 79 ? messageTextColorDark : messageTextColor,
     borderColor: props.luminosity > 79 ? messageBorderColorDark : messageBorderColor,
   }),

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import tinycolor2 from 'tinycolor2';
 
-import ColorSwatch from '../components/c-color-swatch';
+import ColorSwatch from '../components/ColorSwatch/color-swatch';
 
 class Darker extends Component {
 
