@@ -7,7 +7,6 @@ import { addColor } from '../actions/index';
 import { loadColors } from '../actions/index';
 
 import AddButton from '../components/AddButton/e-add-button';
-import InputSearch from '../Elements/e-input-search';
 import InputPercentage from '../Elements/e-input-percentage';
 import SearchBar from '../components/SearchBar/search-bar';
 
@@ -16,7 +15,7 @@ import db from '../db';
 class SearchBarContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {term: this.props.currentColor.hex, percent: this.props.currentPercent};
+    this.state = {term: this.props.currentColor.hex, percent: this.props.currentPercent, message: 'hidden'};
     // binding context for functions
     this.onInputChange = this.onInputChange.bind(this);
     this.onNumberChange = this.onNumberChange.bind(this);
@@ -25,14 +24,14 @@ class SearchBarContainer extends Component {
 
   render(){
     let color = this.state.term;
-
     return (
         <SearchBar
           addColor={(e) => this.postColor(e, color) }
           searchChange={this.onInputChange}
           percentChange={this.onNumberChange}
           searchTerm={this.state.term}
-          percent={this.state.percent} />
+          percent={this.state.percent}
+          message={this.state.message} />
     )
   }
 
@@ -50,35 +49,8 @@ class SearchBarContainer extends Component {
     this.props.getPercent(percent);
   }
 
-  showWarning(warning) {
-    warning.style.visibility = 'visible';
-
-    this.hideWarning(warning);
-  }
-
-  hideWarning(warning) {
-    setTimeout(()=>{
-      warning.style.visibility = 'hidden';
-    },900)
-  }
-
-  showSuccessMessage(success) {
-    success.style.visibility = 'visible';
-    this.hideSuccessMessage(success);
-  }
-
-  hideSuccessMessage(success) {
-    setTimeout(()=>{
-      success.style.visibility = 'hidden';
-    },900)
-  }
-
   postColor(e, color){
     e.persist();
-
-    // selector of the warning message for a particular color swatch
-    let warning = e.target.parentNode.children[3];
-    let success = e.target.parentNode.children[4];
 
     db.table('color').toArray().then((colors) => {
       let currentColorsArray = [];
@@ -95,11 +67,17 @@ class SearchBarContainer extends Component {
         this.props.addColor({color});
         this.props.loadColors();
 
-        this.showSuccessMessage(success);
+        this.setState({message: 'success'});
+        setTimeout(() => {
+          this.setState({message: 'hidden'})
+        }, 900);
       }
 
       else {
-        this.showWarning(warning);
+        this.setState({message: 'warning'});
+        setTimeout(() => {
+          this.setState({message: 'hidden'})
+        }, 900);
       }
     });
   }

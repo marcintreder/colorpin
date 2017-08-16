@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AddButton from '../AddButton/e-add-button';
-import InputSearch from '../../Elements/e-input-search';
-import InputPercentage from '../../Elements/e-input-percentage';
+import SearchInput from '../SearchInput/search-input';
+import SearchPercentage from '../SearchPercentage/search-percentage';
 import SearchBarWrapper from './search-bar.styles';
+import SearchAddMessage from '../SearchAddMessage/search-add-message';
 
 const SearchBar = (props) => {
   return (
     <SearchBarWrapper>
       <AddButton addColor={props.addColor} size="big" />
-      <InputSearch term={props.searchTerm} change={props.searchChange} />
-      <InputPercentage percent={props.percent} change={props.percentChange} />
-      <span className="b-color-search-warning">Color already on the list</span>
-      <span className="b-color-search-success">Color added!</span>
+      <SearchInput term={props.searchTerm} change={props.searchChange} />
+      <SearchPercentage percent={props.percent} change={props.percentChange} />
+      <SearchAddMessage msgVisibility={props.message} />
     </SearchBarWrapper>
   );
 };
@@ -23,6 +23,7 @@ SearchBar.propTypes = {
   percentChange: PropTypes.func.isRequired,
   searchTerm: PropTypes.string.isRequired,
   percent: PropTypes.number.isRequired,
+  message: PropTypes.string.isRequired,
 };
 
 export { SearchBar as default };

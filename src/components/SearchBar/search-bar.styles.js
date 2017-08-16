@@ -8,7 +8,7 @@ const searchWrapper = glamorous.div({
 
   width: '100%',
 
-  margin: '60px 0 60px 0',
+  margin: '60px auto 60px auto',
 
   '&:after': {
     content: ' ',
@@ -19,7 +19,7 @@ const searchWrapper = glamorous.div({
     height: 20,
 
     top: 30,
-    left: -470,
+    right: 315,
 
     background: `${iconsMixin(closeIcon, 'center', 8, 'no-repeat')}`,
     borderRadius: '50%',

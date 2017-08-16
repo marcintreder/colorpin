@@ -39,3 +39,6 @@ export const messageBackground = colors.blueBase;
 export const percentageBackground = colors.whiteBase;
 export const percentageFontSize = 10;
 export const percentageTextColor = colors.grayBase;
+
+// Search tokens
+export const searchTextColor = colors.grayBase;
