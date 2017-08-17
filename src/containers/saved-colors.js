@@ -11,7 +11,7 @@ import { deleteColor } from '../actions/index';
 import { loadColors } from '../actions/index';
 
 import ColorSwatchSmall from '../Elements/e-color-swatch-small';
-import SearchNav from '../Elements/e-search-nav-button';
+import SearchNavButton from '../components/SearchNavButton/search-nav-button';
 
 class SavedColors extends Component {
   constructor(props) {
@@ -78,7 +78,7 @@ class SavedColors extends Component {
 
     return (
       <nav>
-          <SearchNav />
+          <SearchNavButton />
           <h3 className='b-saved-colors-list__header'>Your Colors:</h3>
           <div className='b-saved-colors-list-scroller_up' onMouseMove={() => { this.goUp() }}></div>
           <ul className='b-saved-colors-list' onWheel={(e) => { this.wheel(e) }}>
