@@ -1,5 +1,7 @@
 import glamorous from 'glamorous';
 import { css } from 'glamor';
+import { searchIcon } from '../../Styles_JS/icons';
+import { iconsMixin } from '../../Styles_JS/mixins';
 
 const StyledLink = glamorous.div({
   maxHeight: 50,
@@ -8,7 +10,7 @@ const StyledLink = glamorous.div({
 
 const SearchButton = glamorous.span({
   display: 'block',
-  backgroundColor: '#e6e6e6',
+  background: `#e6e6e6 ${iconsMixin(searchIcon, 'center', 18, 'no-repeat')}`,
 
   height: 50,
   width: 50,

@@ -3,7 +3,11 @@ import { NavLink } from 'react-router-dom';
 import { StyledLink, SearchButton, ActiveStyle } from './search-nav-button.styles';
 
 
-export default () => {
+const SearchNavButton = () => {
+  /* ActiveStyle uses a method toString() passed through Glamor
+  * Glamor is used to to pass a class with styles directly
+  * to the activeClassName in router's NavLink
+  */
   return (
     <StyledLink>
       <NavLink
@@ -15,3 +19,5 @@ export default () => {
     </StyledLink>
   );
 };
+
+export { SearchNavButton as default };
