@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import SavedColors from '../containers/saved-colors';
+import SavedColorsList from '../containers/SavedColorsList/saved-colors-list';
 import ColorDetailsHeader from '../components/color-details-header';
 import ColorDetailsNav from '../Elements/e-color-details-nav';
 import ColorFunctions from '../Modules/m-color-functions';
@@ -18,7 +18,7 @@ class ColorDetailsFunctions extends Component {
   render() {
     return (
       <div className='b-colors-details'>
-        <SavedColors colors={ this.props.loadColors }/>
+        <SavedColorsList colors={ this.props.loadColors }/>
         <article className='b-colors-details__wrapper'>
           <ColorDetailsHeader color={this.props.match.params.color} />
           <ColorDetailsNav color={this.props.match.params.color} />

@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 import tinycolor2 from 'tinycolor2';
 
-import SavedColors from '../containers/saved-colors';
+import SavedColorsList from '../containers/SavedColorsList/saved-colors-list';
 import ColorDetailsHeader from '../components/color-details-header';
 import ColorDetailsNav from '../Elements/e-color-details-nav';
 
@@ -47,7 +47,7 @@ class ColorDetailsAccessability extends Component {
 
     return (
       <div className='b-colors-details'>
-        <SavedColors colors={ this.props.loadColors }/>
+        <SavedColorsList colors={ this.props.loadColors }/>
         <article className='b-colors-details__wrapper'>
           <ColorDetailsHeader color={ activeColor } />
           <ColorDetailsNav color={ activeColor } />
@@ -99,7 +99,7 @@ class ColorDetailsAccessability extends Component {
 
             accessabilityList.push({
               color: activeColor,
-              contrastColor: `#${item.colorCode.color}`,
+              contrastColor: item.colorCode.color,
               aaSmall: aaSmall,
               aaaSmall: aaaSmall,
               aaLarge: aaLarge,

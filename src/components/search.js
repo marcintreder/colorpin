@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import ColorsList from '../containers/colors-list';
 import SearchBarContainer from '../containers/search_bar';
-import SavedColors from '../containers/saved-colors';
+import SavedColors from '../containers/SavedColorsList/saved-colors-list';
 
 import { loadColors } from '../actions/index';
 
